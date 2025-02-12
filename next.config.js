@@ -1,40 +1,23 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-const basePath = isProd ? '/lashon-next' : '';
-
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-  basePath,
-  assetPrefix: basePath,
-  trailingSlash: true,
-  experimental: {
-    optimizePackageImports: ['@heroicons/react'],
+  basePath: process.env.NODE_ENV === 'production' ? '/lashon-next' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/lashon-next' : '',
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(mp4|webm)$/,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/media/[name][ext]',
+      },
+    });
+    return config;
   },
   env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
-  },
-  webpack: (config, { isServer }) => {
-    // Optimize video imports
-    config.module.rules.push({
-      test: /\.(mp4)$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            publicPath: isProd 
-              ? '/lashon-next/_next/static/videos/'
-              : '/_next/static/videos/',
-            outputPath: 'static/videos/',
-            name: '[name].[hash].[ext]',
-          },
-        },
-      ],
-    });
-
-    return config;
+    NEXT_PUBLIC_BASE_PATH: process.env.NODE_ENV === 'production' ? '/lashon-next' : '',
   },
 }
 

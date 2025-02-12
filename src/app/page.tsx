@@ -3,8 +3,8 @@ import FeaturedRelease from '@/components/home/FeaturedRelease';
 import AboutTeaser from '@/components/home/AboutTeaser';
 
 export const metadata = {
-  title: 'Lashon Music',
-  description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
+  title: 'Lashon - Official Website',
+  description: 'Miami-Born • New York-Trained • Ready to Rise',
 };
 
 export default function Home() {
