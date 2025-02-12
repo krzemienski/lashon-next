@@ -1,11 +1,11 @@
 'use client';
 
 import { useRef, useEffect } from "react";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const observerOptions = {
-  rootMargin: "0px",
-  threshold: 0.5,
+  amount: 0.5,
+  once: true,
 };
 
 export default function Intro() {
@@ -49,7 +49,12 @@ export default function Intro() {
       </div>
 
       {/* Content */}
-      <div className="container-width relative z-10 text-center">
+      <motion.div 
+        className="container-width relative z-10 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.8 }}
+      >
         <h1 className="text-6xl sm:text-8xl font-bold text-white mb-6">
           LASHON
         </h1>
@@ -62,7 +67,7 @@ export default function Intro() {
         >
           Explore My Music
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }
