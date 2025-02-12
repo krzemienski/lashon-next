@@ -1,6 +1,7 @@
 import { Montserrat, Open_Sans } from 'next/font/google';
 import './globals.css';
 import MainLayout from '@/components/layout/MainLayout';
+import { getAssetPath } from '@/utils/assetPath';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -18,16 +19,16 @@ export const metadata = {
   title: 'Lashon Music',
   description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
   keywords: 'Lashon, Music, Hip-Hop, R&B, Soul, Miami Artist',
-  manifest: '/manifest.json',
+  manifest: getAssetPath('/manifest.json'),
   themeColor: '#10b981',
   openGraph: {
     title: 'Lashon Music',
     description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
-    url: 'https://lashon.music',
+    url: 'https://nicholasglazer1.github.io/lashon-next',
     siteName: 'Lashon Music',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: getAssetPath('/images/og-image.jpg'),
         width: 1200,
         height: 630,
         alt: 'Lashon Music',
@@ -41,16 +42,16 @@ export const metadata = {
     title: 'Lashon Music',
     description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
     creator: '@lashon_music',
-    images: ['/images/og-image.jpg'],
+    images: [getAssetPath('/images/og-image.jpg')],
   },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png' },
+      { url: getAssetPath('/favicon.ico') },
+      { url: getAssetPath('/logo-portrait.png'), sizes: '192x192', type: 'image/png' },
+      { url: getAssetPath('/logo-portrait.png'), sizes: '512x512', type: 'image/png' },
     ],
     apple: [
-      { url: '/icons/icon-192x192.png' },
+      { url: getAssetPath('/logo-portrait.png') },
     ],
   },
 };
@@ -70,7 +71,7 @@ export default function RootLayout({
     <html lang="en" className={`${montserrat.variable} ${openSans.variable} scroll-smooth`}>
       <head>
         <meta name="theme-color" content="#10b981" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href={getAssetPath('/manifest.json')} />
       </head>
       <body className="antialiased font-sans">
         <MainLayout>{children}</MainLayout>

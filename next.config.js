@@ -1,13 +1,20 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/lashon-next' : '';
+
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/lashon-next' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/lashon-next' : '',
+  basePath,
+  assetPrefix: basePath,
+  trailingSlash: true,
   experimental: {
     optimizePackageImports: ['@heroicons/react'],
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
   webpack: (config, { isServer }) => {
     // Optimize video imports
@@ -17,7 +24,7 @@ const nextConfig = {
         {
           loader: 'file-loader',
           options: {
-            publicPath: process.env.NODE_ENV === 'production' 
+            publicPath: isProd 
               ? '/lashon-next/_next/static/videos/'
               : '/_next/static/videos/',
             outputPath: 'static/videos/',

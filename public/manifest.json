@@ -2,19 +2,20 @@
   "name": "Lashon Music",
   "short_name": "Lashon",
   "description": "Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.",
-  "start_url": "/",
+  "start_url": "/lashon-next",
+  "scope": "/lashon-next/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#10b981",
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/lashon-next/logo-portrait.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/lashon-next/logo-portrait.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
