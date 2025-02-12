@@ -18,6 +18,8 @@ export const metadata = {
   title: 'Lashon Music',
   description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
   keywords: 'Lashon, Music, Hip-Hop, R&B, Soul, Miami Artist',
+  manifest: '/manifest.json',
+  themeColor: '#10b981',
   openGraph: {
     title: 'Lashon Music',
     description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
@@ -39,25 +41,18 @@ export const metadata = {
     title: 'Lashon Music',
     description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
     creator: '@lashon_music',
-    images: ['/images/twitter-image.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    images: ['/images/og-image.jpg'],
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icons/icon-192x192.png' },
+    ],
   },
-  manifest: '/manifest.json',
 };
 
 export const viewport = {
@@ -73,6 +68,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable} scroll-smooth`}>
+      <head>
+        <meta name="theme-color" content="#10b981" />
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body className="antialiased font-sans">
         <MainLayout>{children}</MainLayout>
       </body>

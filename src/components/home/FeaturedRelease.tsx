@@ -2,7 +2,6 @@
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 export default function FeaturedRelease() {
   const { ref, inView } = useInView({
@@ -26,11 +25,10 @@ export default function FeaturedRelease() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative aspect-square"
           >
-            <Image
+            <img
               src="/images/moolah-cover.jpg"
               alt="Moolah Album Cover"
-              fill
-              className="object-cover rounded-lg shadow-2xl"
+              className="w-full h-full object-cover rounded-lg shadow-2xl"
             />
           </motion.div>
 

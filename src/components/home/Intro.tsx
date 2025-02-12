@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
 const observerOptions = {
@@ -10,7 +10,21 @@ const observerOptions = {
 
 export default function Intro() {
   const ref = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const isInView = useInView(ref, observerOptions);
+
+  useEffect(() => {
+    // Force video load and play on mount
+    if (videoRef.current) {
+      videoRef.current.load();
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Auto-play was prevented, we'll let the muted attribute handle it
+        });
+      }
+    }
+  }, []);
 
   return (
     <section
@@ -20,13 +34,14 @@ export default function Intro() {
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
           poster="/images/hero-bg.jpg"
           className="object-cover w-full h-full"
-          preload="metadata"
+          preload="auto"
         >
           <source src="/videos/hero-background-2.mp4" type="video/mp4" />
         </video>
