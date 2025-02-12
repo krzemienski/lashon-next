@@ -29,6 +29,8 @@ export default function FeaturedRelease() {
             <img
               src={moolahCover.src}
               alt="Moolah Album Cover"
+              width={moolahCover.width}
+              height={moolahCover.height}
               className="w-full h-full object-cover rounded-lg shadow-2xl"
             />
           </motion.div>

@@ -43,7 +43,7 @@ export default function Intro() {
           className="object-cover w-full h-full"
           preload="auto"
         >
-          <source src={heroVideo.src} type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50" />
       </div>
