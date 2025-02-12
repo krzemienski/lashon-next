@@ -1,21 +1,22 @@
 import PageHeader from '@/components/shared/PageHeader';
 import PhotoGrid from '@/components/gallery/PhotoGrid';
+import { images } from '@/utils/images';
 
 export const metadata = {
-  title: 'Gallery | Lashon Music',
-  description: 'Explore the visual journey of Lashon through performance shots, studio sessions, and promotional photography.',
+  title: 'Gallery | Lashon',
+  description: 'View photos from Lashon\'s performances, studio sessions, and more.',
+  themeColor: '#000000',
 };
 
-export default function Gallery() {
+export default function GalleryPage() {
   return (
-    <>
+    <main>
       <PageHeader
         title="Gallery"
-        subtitle="Explore the visuals behind the music"
-        imagePath="/images/gallery-2.jpg"
-        imageAlt="Lashon in performance"
+        description="Moments in Motion"
+        imageSrc={images.gallery2.src}
       />
       <PhotoGrid />
-    </>
+    </main>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { images } from '@/utils/images';
 
 export default function Story() {
   const { ref, inView } = useInView({
@@ -19,56 +19,45 @@ export default function Story() {
           transition={{ duration: 0.8 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         >
-          {/* Content */}
-          <div className="space-y-6">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl font-bold text-emerald-400"
-            >
-              From MVP to Music
-            </motion.h2>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="space-y-4 text-gray-300"
-            >
-              <p>
-                Lashon Thomas, a dynamic hip-hop, R&B, and soul artist, found her passion
-                for music after an accomplished athletic career—15 MVP awards and a spot
-                in the Elite Youth Basketball League. Despite her success on the court,
-                she felt drawn to the arts and pursued theatre at Florida A&M before
-                transferring to the American Academy of Dramatic Arts in New York.
-              </p>
-              <p>
-                It was there that she truly discovered her love for performing, but it
-                wasn't until 2020 that her real musical journey began. After two years
-                of intense study—and earning underground rap championship titles—Lashon
-                is poised for a breakthrough year in 2023.
-              </p>
-              <p>
-                Today, she fuses her athletic drive, theater background, and musical
-                talent into an explosive sound that's all her own. Her performances
-                combine the discipline of an athlete with the soul of an artist,
-                creating an unforgettable experience for her audience.
-              </p>
-            </motion.div>
-          </div>
+          {/* Story Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-6"
+          >
+            <h2 className="text-4xl font-bold text-emerald-400 mb-4">My Story</h2>
+            <p className="text-gray-300">
+              Born and raised in the vibrant city of Miami, my musical journey began at an early age.
+              The rich cultural tapestry of South Florida, combined with my family's deep appreciation
+              for music, shaped my unique sound and artistic vision.
+            </p>
+            <p className="text-gray-300">
+              After honing my craft in Miami's dynamic music scene, I made the bold decision to
+              move to New York City. Here, I've had the privilege of working with some of the
+              industry's most innovative producers and artists, pushing the boundaries of my
+              artistry and developing a style that's truly my own.
+            </p>
+            <p className="text-gray-300">
+              Today, I'm excited to share my music with the world, blending the soulful rhythms
+              of my Miami roots with the edgy, contemporary sound I've developed in New York.
+              Each song tells a story, and I invite you to be part of this musical journey.
+            </p>
+          </motion.div>
 
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="relative aspect-[3/4] lg:aspect-square"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative aspect-square"
           >
-            <Image
-              src="/images/gallery-2.jpg"
+            <img
+              src={images.gallery2.src}
               alt="Lashon at the piano"
-              fill
-              className="object-cover rounded-lg shadow-2xl"
+              width={images.gallery2.width}
+              height={images.gallery2.height}
+              className="w-full h-full object-cover rounded-lg shadow-2xl"
             />
           </motion.div>
         </motion.div>

@@ -5,15 +5,28 @@ import Image from 'next/image';
 import { FaPlay, FaPause } from 'react-icons/fa';
 
 interface MusicPlayerProps {
-  coverImage: string;
-  title: string;
-  streamingLinks: {
+  coverImage?: string;
+  title?: string;
+  streamingLinks?: {
     name: string;
     href: string;
   }[];
 }
 
-export default function MusicPlayer({ coverImage, title, streamingLinks }: MusicPlayerProps) {
+export default function MusicPlayer({ 
+  coverImage = 'https://via.placeholder.com/300',
+  title = "Moolah",
+  streamingLinks = [
+    {
+      name: "Spotify",
+      href: "https://open.spotify.com/track/moolah"
+    },
+    {
+      name: "Apple Music",
+      href: "https://music.apple.com/track/moolah"
+    }
+  ]
+}: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {

@@ -1,102 +1,76 @@
 'use client';
 
 import { useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
+import { motion } from 'framer-motion';
+import { images } from '@/utils/images';
 
 const photos = [
   {
-    src: '/images/gallery-1.jpg',
-    alt: 'Lashon performing on stage',
+    src: images.gallery1.src,
+    width: images.gallery1.width,
+    height: images.gallery1.height,
+    alt: 'Lashon performing in a black dress',
   },
   {
-    src: '/images/gallery-2.jpg',
-    alt: 'Lashon studio session',
+    src: images.gallery2.src,
+    width: images.gallery2.width,
+    height: images.gallery2.height,
+    alt: 'Lashon at the white piano',
   },
   {
-    src: '/images/gallery-3.jpg',
-    alt: 'Lashon portrait',
-  },
-  {
-    src: '/images/about-hero.jpg',
+    src: images.gallery3.src,
+    width: images.gallery3.width,
+    height: images.gallery3.height,
     alt: 'Lashon in performance',
   },
   {
-    src: '/images/about-teaser.jpg',
-    alt: 'Lashon promotional shot',
+    src: images.aboutHero.src,
+    width: images.aboutHero.width,
+    height: images.aboutHero.height,
+    alt: 'Lashon portrait',
   },
-  // Add more photos as they become available
+  {
+    src: images.aboutTeaser.src,
+    width: images.aboutTeaser.width,
+    height: images.aboutTeaser.height,
+    alt: 'Lashon in the studio',
+  },
 ];
 
 export default function PhotoGrid() {
-  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [index, setIndex] = useState(-1);
 
   return (
     <>
-      <section ref={ref} className="section-padding bg-black">
-        <div className="container-width">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {photos.map((photo, i) => (
           <motion.div
+            key={photo.src}
             initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+            className="aspect-square cursor-pointer overflow-hidden rounded-lg"
+            onClick={() => setIndex(i)}
           >
-            {photos.map((photo, index) => (
-              <motion.div
-                key={photo.src}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="relative aspect-[3/4] cursor-pointer group"
-                onClick={() => setSelectedPhoto(photo.src)}
-              >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  className="object-cover rounded-lg"
-                />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg" />
-              </motion.div>
-            ))}
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              width={photo.width}
+              height={photo.height}
+              className="h-full w-full object-cover transition-transform duration-300 hover:scale-110"
+            />
           </motion.div>
-        </div>
-      </section>
+        ))}
+      </div>
 
-      {/* Lightbox */}
-      <AnimatePresence>
-        {selectedPhoto && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-            onClick={() => setSelectedPhoto(null)}
-          >
-            <button
-              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors duration-200"
-              onClick={() => setSelectedPhoto(null)}
-            >
-              <XMarkIcon className="h-8 w-8" />
-            </button>
-            <div className="relative w-full max-w-6xl aspect-[3/2]">
-              <Image
-                src={selectedPhoto}
-                alt="Selected photo"
-                fill
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Lightbox
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        slides={photos}
+      />
     </>
   );
 }

@@ -2,8 +2,8 @@
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
+import { images } from '@/utils/images';
 
 export default function AboutTeaser() {
   const { ref, inView } = useInView({
@@ -27,18 +27,19 @@ export default function AboutTeaser() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            <h2 className="text-4xl font-bold text-emerald-400">About Lashon</h2>
+            <h2 className="text-4xl font-bold text-emerald-400 mb-4">About Me</h2>
             <p className="text-gray-300">
-              From MVP athlete to rising music star, Lashon's journey is one of passion
-              and transformation. With 15 MVP awards in basketball and a background in
-              theatre, she brings a unique perspective to her music that sets her apart
-              in the industry.
+              From MVP athlete to soul-stirring artist, my journey has been anything but
+              conventional. I bring the same passion and dedication that earned me 15 MVP
+              awards in basketball to my music, creating a unique sound that combines raw
+              energy with polished artistry.
             </p>
-            <div>
-              <Link href="/about" className="btn-secondary">
-                Learn More
-              </Link>
-            </div>
+            <Link
+              href="/about"
+              className="btn-primary inline-block"
+            >
+              Learn More
+            </Link>
           </motion.div>
 
           {/* Image */}
@@ -46,13 +47,14 @@ export default function AboutTeaser() {
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative aspect-[3/4]"
+            className="relative aspect-square"
           >
-            <Image
-              src="/images/gallery-1.jpg"
-              alt="Lashon portrait"
-              fill
-              className="object-cover rounded-lg shadow-2xl"
+            <img
+              src={images.gallery1.src}
+              alt="Lashon performing"
+              width={images.gallery1.width}
+              height={images.gallery1.height}
+              className="w-full h-full object-cover rounded-lg shadow-2xl"
             />
           </motion.div>
         </motion.div>

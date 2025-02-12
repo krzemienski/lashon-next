@@ -1,23 +1,22 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Story from '@/components/about/Story';
-import Quote from '@/components/about/Quote';
+import { images } from '@/utils/images';
 
 export const metadata = {
-  title: 'About | Lashon Music',
-  description: 'Learn about Miami-born artist Lashon, her journey from athlete to artist, and her unique fusion of hip-hop, R&B, and soul.',
+  title: 'About | Lashon',
+  description: 'Learn about Lashon\'s journey from MVP athlete to rising music star.',
+  themeColor: '#000000',
 };
 
-export default function About() {
+export default function AboutPage() {
   return (
-    <>
+    <main>
       <PageHeader
-        title="Meet Lashon"
-        subtitle="From athlete to artist, a journey of passion and purpose"
-        imagePath="/images/about-hero.jpg"
-        imageAlt="Lashon in performance"
+        title="About"
+        description="From MVP to Music"
+        imageSrc={images.aboutHero.src}
       />
       <Story />
-      <Quote />
-    </>
+    </main>
   );
 }

@@ -1,52 +1,49 @@
 'use client';
 
+import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 interface PageHeaderProps {
   title: string;
-  subtitle?: string;
-  imagePath: string;
-  imageAlt: string;
+  description: string;
+  imageSrc: string;
 }
 
-export default function PageHeader({ title, subtitle, imagePath, imageAlt }: PageHeaderProps) {
+export default function PageHeader({ title, description, imageSrc }: PageHeaderProps) {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <div className="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+    <section
+      ref={ref}
+      className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black"
+    >
       {/* Background Image */}
       <div className="absolute inset-0">
-        <Image
-          src={imagePath}
-          alt={imageAlt}
-          fill
-          priority
-          className="object-cover"
-          quality={100}
+        <img
+          src={imageSrc}
+          alt={`${title} background`}
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl sm:text-6xl font-bold text-white mb-4"
-        >
+      <motion.div 
+        className="container-width relative z-10 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="text-6xl sm:text-7xl font-bold text-white mb-6">
           {title}
-        </motion.h1>
-        {subtitle && (
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-200"
-          >
-            {subtitle}
-          </motion.p>
-        )}
-      </div>
-    </div>
+        </h1>
+        <p className="text-xl sm:text-2xl text-gray-200">
+          {description}
+        </p>
+      </motion.div>
+    </section>
   );
 }

@@ -1,21 +1,22 @@
 import PageHeader from '@/components/shared/PageHeader';
-import Discography from '@/components/music/Discography';
+import MusicPlayer from '@/components/music/MusicPlayer';
+import { images } from '@/utils/images';
 
 export const metadata = {
-  title: 'Music | Lashon Music',
-  description: 'Listen to the latest releases from Lashon, featuring a unique blend of hip-hop, R&B, and soul music.',
+  title: 'Music | Lashon',
+  description: 'Listen to Lashon\'s latest releases and explore her unique fusion of hip-hop, R&B, and soul.',
+  themeColor: '#000000',
 };
 
-export default function Music() {
+export default function MusicPage() {
   return (
-    <>
+    <main>
       <PageHeader
         title="My Music"
-        subtitle="A fusion of hip-hop, R&B, and soul"
-        imagePath="/images/moolah-cover.jpg"
-        imageAlt="Moolah single cover"
+        description="A fusion of hip-hop, R&B, and soul"
+        imageSrc={images.gallery2.src}
       />
-      <Discography />
-    </>
+      <MusicPlayer />
+    </main>
   );
 }

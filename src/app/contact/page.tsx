@@ -1,23 +1,22 @@
 import PageHeader from '@/components/shared/PageHeader';
 import ContactForm from '@/components/contact/ContactForm';
-import SocialLinks from '@/components/contact/SocialLinks';
+import { images } from '@/utils/images';
 
 export const metadata = {
-  title: 'Contact | Lashon Music',
-  description: 'Get in touch with Lashon for bookings, collaborations, or just to say hello. Connect on social media or send a message directly.',
+  title: 'Contact | Lashon',
+  description: 'Get in touch with Lashon for bookings, collaborations, or just to say hello.',
+  themeColor: '#000000',
 };
 
-export default function Contact() {
+export default function ContactPage() {
   return (
-    <>
+    <main>
       <PageHeader
         title="Contact"
-        subtitle="Let's connect and create something amazing"
-        imagePath="/images/gallery-3.jpg"
-        imageAlt="Lashon portrait"
+        description="Let's Connect"
+        imageSrc={images.gallery3.src}
       />
       <ContactForm />
-      <SocialLinks />
-    </>
+    </main>
   );
 }
