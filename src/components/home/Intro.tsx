@@ -2,10 +2,8 @@
 
 import { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-
-const BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://nicholasglazer1.github.io/lashon-next'
-  : '';
+import heroVideo from '@/public/videos/hero-background-2.mp4';
+import heroPoster from '@/public/images/hero-bg.jpg';
 
 export default function Intro() {
   const ref = useRef(null);
@@ -41,11 +39,11 @@ export default function Intro() {
           muted
           loop
           playsInline
-          poster={`${BASE_URL}/images/hero-bg.jpg`}
+          poster={heroPoster.src}
           className="object-cover w-full h-full"
           preload="auto"
         >
-          <source src={`${BASE_URL}/videos/hero-background-2.mp4`} type="video/mp4" />
+          <source src={heroVideo.src} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50" />
       </div>

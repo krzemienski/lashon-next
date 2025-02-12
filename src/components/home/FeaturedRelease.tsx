@@ -2,10 +2,7 @@
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-
-const BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://nicholasglazer1.github.io/lashon-next'
-  : '';
+import moolahCover from '@/public/images/moolah-cover.jpg';
 
 export default function FeaturedRelease() {
   const { ref, inView } = useInView({
@@ -30,7 +27,7 @@ export default function FeaturedRelease() {
             className="relative aspect-square"
           >
             <img
-              src={`${BASE_URL}/images/moolah-cover.jpg`}
+              src={moolahCover.src}
               alt="Moolah Album Cover"
               className="w-full h-full object-cover rounded-lg shadow-2xl"
             />
