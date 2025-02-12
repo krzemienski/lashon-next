@@ -17,20 +17,21 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
-  webpack: (config, { isServer }) => {
-    // Handle media files (images and videos)
+  webpack: (config) => {
     config.module.rules.push({
-      test: /\.(mp4|jpe?g|png|svg|gif|ico|webp)$/i,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            publicPath: `${basePath}/_next/static/media/`,
-            outputPath: 'static/media/',
-            name: '[name].[hash].[ext]',
-          },
-        },
-      ],
+      test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/media/[name].[hash][ext]'
+      }
+    });
+
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|webp|avif)$/i,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/media/[name].[hash][ext]'
+      }
     });
 
     return config;

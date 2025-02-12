@@ -2,8 +2,8 @@
 
 import { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import heroVideo from '@/public/videos/hero-background-2.mp4';
-import heroPoster from '@/public/images/hero-bg.jpg';
+import heroVideo from '../../../public/videos/hero-background-2.mp4';
+import heroPoster from '../../../public/images/hero-bg.jpg';
 
 export default function Intro() {
   const ref = useRef(null);

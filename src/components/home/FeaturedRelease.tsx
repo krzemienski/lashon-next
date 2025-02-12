@@ -2,7 +2,7 @@
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import moolahCover from '@/public/images/moolah-cover.jpg';
+import moolahCover from '../../../public/images/moolah-cover.jpg';
 
 export default function FeaturedRelease() {
   const { ref, inView } = useInView({
