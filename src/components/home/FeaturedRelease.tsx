@@ -2,6 +2,7 @@
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import { getAssetPath } from "@/utils/assetPath";
 
 export default function FeaturedRelease() {
   const { ref, inView } = useInView({
@@ -26,7 +27,7 @@ export default function FeaturedRelease() {
             className="relative aspect-square"
           >
             <img
-              src="/images/moolah-cover.jpg"
+              src={getAssetPath('/images/moolah-cover.jpg')}
               alt="Moolah Album Cover"
               className="w-full h-full object-cover rounded-lg shadow-2xl"
             />
@@ -48,20 +49,20 @@ export default function FeaturedRelease() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="#"
-                className="px-6 py-3 bg-emerald-400 text-white rounded-lg hover:bg-emerald-500 transition duration-300"
+                href="https://open.spotify.com/track/moolah"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn-primary"
               >
-                Stream Now
+                Listen on Spotify
               </a>
               <a
-                href="#"
-                className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition duration-300"
+                href="https://music.apple.com/track/moolah"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn-secondary"
               >
-                Watch Video
+                Apple Music
               </a>
             </div>
           </motion.div>

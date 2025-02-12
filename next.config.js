@@ -5,6 +5,7 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath: process.env.NODE_ENV === 'production' ? '/lashon-next' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/lashon-next' : '',
   experimental: {
     optimizePackageImports: ['@heroicons/react'],
   },
@@ -16,7 +17,9 @@ const nextConfig = {
         {
           loader: 'file-loader',
           options: {
-            publicPath: '/_next/static/videos/',
+            publicPath: process.env.NODE_ENV === 'production' 
+              ? '/lashon-next/_next/static/videos/'
+              : '/_next/static/videos/',
             outputPath: 'static/videos/',
             name: '[name].[hash].[ext]',
           },

@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
+import { getAssetPath } from "@/utils/assetPath";
 
 const observerOptions = {
   amount: 0.5,
@@ -39,11 +40,11 @@ export default function Intro() {
           muted
           loop
           playsInline
-          poster="/images/hero-bg.jpg"
+          poster={getAssetPath('/images/hero-bg.jpg')}
           className="object-cover w-full h-full"
           preload="auto"
         >
-          <source src="/videos/hero-background-2.mp4" type="video/mp4" />
+          <source src={getAssetPath('/videos/hero-background-2.mp4')} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50" />
       </div>
