@@ -1,6 +1,6 @@
 import PageHeader from '@/components/shared/PageHeader';
 import Story from '@/components/about/Story';
-import { images } from '@/utils/images';
+import { getAssetPath } from '@/utils/assetPath';
 
 export const metadata = {
   title: 'About | Lashon',
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <PageHeader
         title="About"
         description="From MVP to Music"
-        imageSrc={images.aboutHero.src}
+        imageSrc={getAssetPath('/images/about-hero.jpg')}
       />
       <Story />
     </main>

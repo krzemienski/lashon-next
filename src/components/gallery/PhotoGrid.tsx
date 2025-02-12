@@ -4,37 +4,27 @@ import { useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { motion } from 'framer-motion';
-import { images } from '@/utils/images';
+import { getAssetPath } from '@/utils/assetPath';
 
 const photos = [
   {
-    src: images.gallery1.src,
-    width: images.gallery1.width,
-    height: images.gallery1.height,
+    src: getAssetPath('/images/gallery-1.jpg'),
     alt: 'Lashon performing in a black dress',
   },
   {
-    src: images.gallery2.src,
-    width: images.gallery2.width,
-    height: images.gallery2.height,
+    src: getAssetPath('/images/gallery-2.jpg'),
     alt: 'Lashon at the white piano',
   },
   {
-    src: images.gallery3.src,
-    width: images.gallery3.width,
-    height: images.gallery3.height,
+    src: getAssetPath('/images/gallery-3.jpg'),
     alt: 'Lashon in performance',
   },
   {
-    src: images.aboutHero.src,
-    width: images.aboutHero.width,
-    height: images.aboutHero.height,
+    src: getAssetPath('/images/about-hero.jpg'),
     alt: 'Lashon portrait',
   },
   {
-    src: images.aboutTeaser.src,
-    width: images.aboutTeaser.width,
-    height: images.aboutTeaser.height,
+    src: getAssetPath('/images/about-teaser.jpg'),
     alt: 'Lashon in the studio',
   },
 ];
@@ -57,8 +47,6 @@ export default function PhotoGrid() {
             <img
               src={photo.src}
               alt={photo.alt}
-              width={photo.width}
-              height={photo.height}
               className="h-full w-full object-cover transition-transform duration-300 hover:scale-110"
             />
           </motion.div>

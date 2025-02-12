@@ -3,7 +3,7 @@
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { images } from '@/utils/images';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function AboutTeaser() {
   const { ref, inView } = useInView({
@@ -50,10 +50,8 @@ export default function AboutTeaser() {
             className="relative aspect-square"
           >
             <img
-              src={images.gallery1.src}
+              src={getAssetPath('/images/gallery-1.jpg')}
               alt="Lashon performing"
-              width={images.gallery1.width}
-              height={images.gallery1.height}
               className="w-full h-full object-cover rounded-lg shadow-2xl"
             />
           </motion.div>

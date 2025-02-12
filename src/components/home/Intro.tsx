@@ -2,8 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import heroVideo from '../../../public/videos/hero-background-2.mp4';
-import heroPoster from '../../../public/images/hero-bg.jpg';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function Intro() {
   const ref = useRef(null);
@@ -39,11 +38,11 @@ export default function Intro() {
           muted
           loop
           playsInline
-          poster={heroPoster.src}
+          poster={getAssetPath('/images/hero-bg.jpg')}
           className="object-cover w-full h-full"
           preload="auto"
         >
-          <source src={heroVideo} type="video/mp4" />
+          <source src={getAssetPath('/videos/hero-background-2.mp4')} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50" />
       </div>

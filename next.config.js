@@ -18,15 +18,23 @@ const nextConfig = {
   },
   webpack(config) {
     config.module.rules.push({
-      test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|jpe?g|gif|png|svg|webp|avif)$/i,
-      type: 'asset',
+      test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/i,
+      type: 'asset/resource',
       generator: {
-        filename: 'static/media/[name].[hash][ext]'
+        filename: 'static/media/[name][ext]'
+      }
+    });
+
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|svg|webp|avif)$/i,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/media/[name][ext]'
       }
     });
 
     return config;
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

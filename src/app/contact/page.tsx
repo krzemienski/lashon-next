@@ -1,6 +1,6 @@
 import PageHeader from '@/components/shared/PageHeader';
 import ContactForm from '@/components/contact/ContactForm';
-import { images } from '@/utils/images';
+import { getAssetPath } from '@/utils/assetPath';
 
 export const metadata = {
   title: 'Contact | Lashon',
@@ -14,7 +14,7 @@ export default function ContactPage() {
       <PageHeader
         title="Contact"
         description="Let's Connect"
-        imageSrc={images.gallery3.src}
+        imageSrc={getAssetPath('/images/gallery-3.jpg')}
       />
       <ContactForm />
     </main>

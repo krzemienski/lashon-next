@@ -2,7 +2,7 @@
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import { images } from '@/utils/images';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function Story() {
   const { ref, inView } = useInView({
@@ -53,10 +53,8 @@ export default function Story() {
             className="relative aspect-square"
           >
             <img
-              src={images.gallery2.src}
+              src={getAssetPath('/images/gallery-2.jpg')}
               alt="Lashon at the piano"
-              width={images.gallery2.width}
-              height={images.gallery2.height}
               className="w-full h-full object-cover rounded-lg shadow-2xl"
             />
           </motion.div>

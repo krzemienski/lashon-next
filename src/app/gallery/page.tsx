@@ -1,6 +1,6 @@
 import PageHeader from '@/components/shared/PageHeader';
 import PhotoGrid from '@/components/gallery/PhotoGrid';
-import { images } from '@/utils/images';
+import { getAssetPath } from '@/utils/assetPath';
 
 export const metadata = {
   title: 'Gallery | Lashon',
@@ -14,7 +14,7 @@ export default function GalleryPage() {
       <PageHeader
         title="Gallery"
         description="Moments in Motion"
-        imageSrc={images.gallery2.src}
+        imageSrc={getAssetPath('/images/gallery-2.jpg')}
       />
       <PhotoGrid />
     </main>
