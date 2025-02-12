@@ -2,7 +2,7 @@
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import moolahCover from '../../../public/images/moolah-cover.jpg';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function FeaturedRelease() {
   const { ref, inView } = useInView({
@@ -27,10 +27,8 @@ export default function FeaturedRelease() {
             className="relative aspect-square"
           >
             <img
-              src={moolahCover.src}
+              src={getAssetPath('/images/moolah-cover.jpg')}
               alt="Moolah Album Cover"
-              width={moolahCover.width}
-              height={moolahCover.height}
               className="w-full h-full object-cover rounded-lg shadow-2xl"
             />
           </motion.div>
