@@ -19,7 +19,7 @@ const openSans = Open_Sans({
 export const metadata = {
   title: 'Lashon Music',
   description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
-  themeColor: '#10b981',
+  themeColor: '#000000',
   manifest: '/manifest.json',
   icons: {
     icon: '/favicon.ico',
@@ -64,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable} scroll-smooth`}>
       <head>
-        <meta name="theme-color" content="#10b981" />
+        <meta name="theme-color" content="#000000" />
         <link rel="manifest" href={getAssetPath('/manifest.json')} />
       </head>
       <body className="antialiased font-sans">
