@@ -9,7 +9,15 @@ interface PageHeaderProps {
   imageSrc: string;
 }
 
-export default function PageHeader({ title, description, imageSrc }: PageHeaderProps) {
+export default function PageHeader({
+  title,
+  description,
+  imageSrc,
+}: {
+  title: string;
+  description: string;
+  imageSrc: string;
+}) {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -18,13 +26,13 @@ export default function PageHeader({ title, description, imageSrc }: PageHeaderP
   return (
     <section
       ref={ref}
-      className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black"
+      className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src={imageSrc}
-          alt={`${title} background`}
+          alt={title}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -37,10 +45,10 @@ export default function PageHeader({ title, description, imageSrc }: PageHeaderP
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-6xl sm:text-7xl font-bold text-white mb-6">
+        <h1 className="text-6xl font-amsterdam text-gold mb-4">
           {title}
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-200">
+        <p className="text-xl text-white/90">
           {description}
         </p>
       </motion.div>

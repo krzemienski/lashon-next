@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { getAssetPath } from '@/utils/assetPath';
+import Link from 'next/link';
 
 export default function Intro() {
   const ref = useRef(null);
@@ -13,13 +14,12 @@ export default function Intro() {
   });
 
   useEffect(() => {
-    // Force video load and play on mount
     if (videoRef.current) {
       videoRef.current.load();
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
-          // Auto-play was prevented, we'll let the muted attribute handle it
+          // Auto-play was prevented
         });
       }
     }
@@ -54,7 +54,7 @@ export default function Intro() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-6xl sm:text-8xl font-bold text-white mb-6">
+        <h1 className="text-6xl sm:text-8xl font-bold text-white mb-6 font-amsterdam">
           LASHON
         </h1>
         <p className="text-xl sm:text-2xl text-gray-200 mb-8">

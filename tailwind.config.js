@@ -18,6 +18,9 @@ module.exports = {
         permanentMarker: ["Permanent Marker", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         rockSalt: ["Rock Salt", "sans-serif"],
+        montserrat: ['var(--font-montserrat)'],
+        'open-sans': ['var(--font-open-sans)'],
+        amsterdam: ['Amsterdam Three', 'serif'],
       },
       colors: {
         emerald: {
@@ -36,6 +39,33 @@ module.exports = {
         "fluo-green": "#43ffb6",
         "yellow-btn-primary": "#ffc621",
         "medium-gray": "#bebebe",
+        brown: {
+          DEFAULT: '#8B4513',
+          light: '#A0522D',
+          dark: '#8B4513',
+        },
+        gold: {
+          DEFAULT: '#DAA520',
+          light: '#FFD700',
+          dark: '#B8860B',
+        },
+        'burnt-orange': {
+          DEFAULT: '#CC5500',
+          light: '#FF6600',
+          dark: '#A04000',
+        },
+        yellow: {
+          50: '#FFFFF0',
+          100: '#FEFCBF',
+          200: '#FAF089',
+          300: '#F6E05E',
+          400: '#F6E05E',
+          500: '#ECC94B',
+          600: '#D69E2E',
+          700: '#B7791F',
+          800: '#975A16',
+          900: '#744210',
+        },
       },
       boxShadow: {
         "centered-shadow": "0px 0px 19px 4px rgba(0,0,0,0.1)",

@@ -32,7 +32,13 @@ export default function ContactForm() {
 
   return (
     <section ref={ref} className="section-padding bg-black">
-      <div className="container-width">
+      <div className="container-width max-w-3xl">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gold mb-4">Get in Touch</h2>
+          <p className="text-gray-300">
+            For bookings, collaborations, or just to say hello, fill out the form below.
+          </p>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -40,49 +46,38 @@ export default function ContactForm() {
           className="max-w-2xl mx-auto"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-300"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="mt-1 block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500"
-                placeholder="Your name"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="name" className="block text-gold mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-gold text-white"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-gold mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-gold text-white"
+                />
+              </div>
             </div>
-
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-300"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="mt-1 block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500"
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-300"
-              >
+              <label htmlFor="message" className="block text-gold mb-2">
                 Message
               </label>
               <textarea
@@ -90,17 +85,15 @@ export default function ContactForm() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                required
                 rows={6}
-                className="mt-1 block w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 resize-none"
-                placeholder="Your message..."
-              />
+                required
+                className="w-full px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-gold text-white resize-none"
+              ></textarea>
             </div>
-
-            <div>
+            <div className="text-center">
               <button
                 type="submit"
-                className="w-full bg-emerald-500 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-emerald-600 transition-colors duration-200"
+                className="w-full bg-gold text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-gold-600 transition-colors duration-200"
               >
                 Send Message
               </button>

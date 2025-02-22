@@ -1,5 +1,6 @@
 import { Montserrat, Open_Sans } from 'next/font/google';
 import './globals.css';
+import '@/styles/fonts.css';
 import MainLayout from '@/components/layout/MainLayout';
 import { getAssetPath } from '@/utils/assetPath';
 
@@ -18,17 +19,21 @@ const openSans = Open_Sans({
 export const metadata = {
   title: 'Lashon Music',
   description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
-  keywords: 'Lashon, Music, Hip-Hop, R&B, Soul, Miami Artist',
-  manifest: getAssetPath('/manifest.json'),
   themeColor: '#10b981',
+  manifest: '/manifest.json',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: 'Lashon Music',
     description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
-    url: 'https://nicholasglazer1.github.io/lashon-next',
+    url: 'https://lashonmusic.com',
     siteName: 'Lashon Music',
     images: [
       {
-        url: getAssetPath('/images/og-image.jpg'),
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Lashon Music',
@@ -41,18 +46,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Lashon Music',
     description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
-    creator: '@lashon_music',
-    images: [getAssetPath('/images/og-image.jpg')],
-  },
-  icons: {
-    icon: [
-      { url: getAssetPath('/favicon.ico') },
-      { url: getAssetPath('/logo-portrait.png'), sizes: '192x192', type: 'image/png' },
-      { url: getAssetPath('/logo-portrait.png'), sizes: '512x512', type: 'image/png' },
-    ],
-    apple: [
-      { url: getAssetPath('/logo-portrait.png') },
-    ],
+    images: ['/images/twitter-image.jpg'],
   },
 };
 
