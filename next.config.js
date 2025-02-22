@@ -5,6 +5,8 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  basePath: '/lashon-next',
+  assetPrefix: '/lashon-next/',
 }
 
 module.exports = nextConfig
