@@ -65,7 +65,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-6xl sm:text-8xl font-bold text-white mb-6"
+            className="text-[3rem] xs:text-[4rem] sm:text-[6rem] md:text-[7rem] lg:text-[8rem] font-bold text-white mb-4 sm:mb-6 tracking-wider hero-text"
           >
             LASHON
           </motion.h1>
@@ -73,7 +73,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xl sm:text-2xl text-gray-200 mb-8"
+            className="text-lg xs:text-xl sm:text-2xl text-gray-200 mb-6 sm:mb-8 tracking-wide"
           >
             Miami-Born • New York-Trained • Ready to Rise
           </motion.p>

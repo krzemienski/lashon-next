@@ -44,7 +44,7 @@ export default function Intro() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-black"
+      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-black py-16 sm:py-20"
     >
       {/* Video Background */}
       <div className="absolute inset-0">
@@ -65,7 +65,7 @@ export default function Intro() {
 
       {/* Content */}
       <motion.div 
-        className="container-width relative z-10 text-center px-4 hero-text-container"
+        className="container-width relative z-10 text-center px-4 intro-text-container"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8 }}
@@ -74,15 +74,15 @@ export default function Intro() {
           <img 
             src={getAssetPath('/images/lashon-text-logo.png')} 
             alt="LASHON" 
-            className="w-full max-w-[280px] mx-auto mb-6" 
+            className="w-full max-w-[280px] mx-auto mb-4 sm:mb-6" 
           />
         ) : (
-          <h1 className="text-[3.5rem] xs:text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem] xl:text-[13rem] font-amsterdam text-white mb-6 leading-[0.85] tracking-normal">
+          <h1 className="text-[3.5rem] xs:text-[4.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-amsterdam text-white mb-4 sm:mb-6 leading-[0.9] tracking-normal intro-title">
             LASHON
           </h1>
         )}
         
-        <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 font-poppins max-w-2xl mx-auto tagline-text">
+        <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 font-poppins max-w-2xl mx-auto intro-tagline">
           {screenWidth < 375 ? 
             "Miami-Born • NY-Trained • Rising" : 
             "Miami-Born • New York-Trained • Ready to Rise"
@@ -91,7 +91,7 @@ export default function Intro() {
         
         <a
           href="#latest-release"
-          className="btn-primary text-base sm:text-lg px-8 py-4"
+          className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
         >
           Explore My Music
         </a>
