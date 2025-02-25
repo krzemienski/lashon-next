@@ -44,7 +44,7 @@ export default function Intro() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-black py-16 sm:py-20"
+      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-black py-12 sm:py-16"
     >
       {/* Video Background */}
       <div className="absolute inset-0">
@@ -74,15 +74,15 @@ export default function Intro() {
           <img 
             src={getAssetPath('/images/lashon-text-logo.png')} 
             alt="LASHON" 
-            className="w-full max-w-[140px] mx-auto mb-4 sm:mb-6" 
+            className="w-full max-w-[70px] mx-auto mb-3 sm:mb-4" 
           />
         ) : (
-          <h1 className="text-[1.75rem] xs:text-[2.25rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] font-amsterdam text-white mb-4 sm:mb-6 leading-[0.9] tracking-normal intro-title">
+          <h1 className="text-[1rem] xs:text-[1.25rem] sm:text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.25rem] font-amsterdam text-white mb-3 sm:mb-4 leading-[0.9] tracking-normal intro-title">
             LASHON
           </h1>
         )}
         
-        <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 font-poppins max-w-2xl mx-auto intro-tagline">
+        <p className="text-xs xs:text-sm sm:text-base md:text-lg text-gray-200 mb-4 sm:mb-6 font-poppins max-w-xl mx-auto intro-tagline opacity-90">
           {screenWidth < 375 ? 
             "Miami-Born • NY-Trained • Rising" : 
             "Miami-Born • New York-Trained • Ready to Rise"
@@ -91,7 +91,7 @@ export default function Intro() {
         
         <a
           href="#latest-release"
-          className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
+          className="btn-primary text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3"
         >
           Explore My Music
         </a>
