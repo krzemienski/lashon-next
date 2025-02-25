@@ -7,4 +7,5 @@
   text-rendering: optimizeLegibility;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  font-synthesis: none;
 }
