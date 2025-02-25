@@ -1,5 +1,15 @@
+@font-face {
+    font-family: "Amsterdam Four_ttf";
+    src: url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.eot");
+    src: url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.svg#Amsterdam Four_ttf")format("svg");
+}
+
 .font-amsterdam {
-  font-family: 'Amsterdam', cursive;
+  font-family: "Amsterdam Four_ttf", serif;
   font-weight: normal;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -7,5 +17,4 @@
   text-rendering: optimizeLegibility;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-synthesis: none;
 }

@@ -22,7 +22,7 @@ export default function Story() {
         >
           {/* Story Text */}
           <div className="space-y-8">
-            <h1 className="text-5xl font-amsterdam text-gold mb-8">My Story</h1>
+            <h1 className="text-5xl font-poppins font-semibold text-gold mb-8">My Story</h1>
             <div className="space-y-6">
               <p className="text-gray-300 text-lg">
                 Born and raised in the vibrant city of Miami, my musical journey began at an early age.

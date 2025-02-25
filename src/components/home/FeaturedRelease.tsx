@@ -33,7 +33,7 @@ export default function FeaturedRelease() {
           className="max-w-5xl mx-auto px-4"
         >
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-amsterdam text-gold mb-4">Latest Release</h2>
+            <h2 className="text-5xl font-poppins font-semibold text-gold mb-4">Latest Release</h2>
             <p className="text-xl text-white/90">Experience the evolution of sound</p>
           </div>
 
@@ -48,7 +48,7 @@ export default function FeaturedRelease() {
               </div>
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-4xl font-amsterdam text-gold mb-4">Moolah</h3>
+                  <h3 className="text-4xl font-poppins font-semibold text-gold mb-4">Moolah</h3>
                   <p className="text-gray-300 text-lg">
                     A fusion of hip-hop and R&B that showcases the unique sound and style that defines Lashon's music.
                   </p>

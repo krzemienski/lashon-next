@@ -1,5 +1,4 @@
-import { Montserrat, Open_Sans } from 'next/font/google';
-import localFont from 'next/font/local';
+import { Montserrat, Open_Sans, Poppins } from 'next/font/google';
 import './globals.css';
 import '@/styles/fonts.css';
 import MainLayout from '@/components/layout/MainLayout';
@@ -17,11 +16,10 @@ const openSans = Open_Sans({
   variable: '--font-open-sans',
 });
 
-const amsterdam = localFont({
-  src: './Amsterdam.ttf',
-  variable: '--font-amsterdam',
-  display: 'swap',
-  preload: true,
+const poppins = Poppins({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
 });
 
 export const metadata = {
@@ -70,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${amsterdam.variable} ${montserrat.variable} ${openSans.variable} scroll-smooth`}>
+    <html lang="en" className={`${montserrat.variable} ${openSans.variable} ${poppins.variable} scroll-smooth`}>
       <head>
         <meta name="theme-color" content="#000000" />
         <link rel="manifest" href={getAssetPath('/manifest.json')} />
