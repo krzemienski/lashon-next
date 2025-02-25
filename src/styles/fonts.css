@@ -18,3 +18,37 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+
+/* Media queries for font optimization */
+@media (max-width: 375px) {
+  .font-amsterdam {
+    letter-spacing: -0.02em;
+  }
+  
+  .hero-text-container {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  .tagline-text {
+    font-size: 0.875rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Media queries for font optimization */
+@media (max-width: 375px) {
+  .font-amsterdam {
+    letter-spacing: -0.02em;
+  }
+  
+  .hero-text-container {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  .tagline-text {
+    font-size: 0.875rem;
+    padding: 0 0.5rem;
+  }
+}

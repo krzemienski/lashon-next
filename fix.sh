@@ -1,3 +1,22 @@
+
+#!/bin/bash
+
+echo "Fixing Responsive Header Issues..."
+
+# Create backup directory
+mkdir -p backup-files
+
+# Backup original files
+echo "Creating backups..."
+cp src/components/home/Intro.tsx backup-files/Intro.tsx.bak
+cp src/styles/fonts.css backup-files/fonts.css.bak
+cp src/app/globals.css backup-files/globals.css.bak
+cp src/components/layout/MainLayout.tsx backup-files/MainLayout.tsx.bak
+echo "Backups created in backup-files directory."
+
+# Update Intro.tsx
+echo "Updating Intro.tsx..."
+cat > src/components/home/Intro.tsx << 'EOF'
 'use client';
 
 import { useRef, useEffect, useState } from "react";
@@ -99,3 +118,77 @@ export default function Intro() {
     </section>
   );
 }
+EOF
+
+# Append to fonts.css
+echo "Updating fonts.css..."
+cat >> src/styles/fonts.css << 'EOF'
+
+/* Media queries for font optimization */
+@media (max-width: 375px) {
+  .font-amsterdam {
+    letter-spacing: -0.02em;
+  }
+  
+  .hero-text-container {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  .tagline-text {
+    font-size: 0.875rem;
+    padding: 0 0.5rem;
+  }
+}
+EOF
+
+# Update globals.css
+echo "Updating globals.css..."
+# Use sed to find utilities section and add the new class
+sed -i.tmp '/\@layer utilities/a \
+  /* Hero text container */ \
+  .hero-text-container { \
+    overflow-x: hidden; \
+    max-width: 100%; \
+  }' src/app/globals.css
+rm src/app/globals.css.tmp
+
+# Create temp folder for the logo
+mkdir -p temp-assets
+
+# Generate a placeholder image file
+echo "Creating placeholder logo image..."
+cat > temp-assets/placeholder.svg << 'EOF'
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="60">
+  <text x="10" y="40" font-family="Arial" font-size="40" fill="gold">LASHON</text>
+</svg>
+EOF
+
+# Update MainLayout.tsx to make navigation logo responsive
+echo "Updating MainLayout.tsx logo..."
+# This is more complex as we need to find and replace a specific block
+# For shell script, we'll use a simpler approach - inform user to make the change manually
+
+echo ""
+echo "-------------------------------------------"
+echo "IMPORTANT NEXT STEPS:"
+echo "1. Make sure to create a lashon-text-logo.png file in /public/images/ directory"
+echo "2. This should be a PNG of your \"LASHON\" text in Amsterdam font"
+echo "3. Optimal size: ~280px width with transparent background"
+echo "4. A placeholder SVG has been created in temp-assets folder"
+echo ""
+echo "Optional but recommended - Update your MainLayout.tsx file:"
+echo "Find the Logo link and replace with this code:"
+echo ""
+echo "<Link href=\"/\" className=\"text-xl xs:text-2xl sm:text-3xl font-amsterdam text-gold hover:text-burnt-orange transition-colors leading-none max-w-[180px] inline-block\">"
+echo "  <span className=\"hidden sm:inline\">LASHON</span>"
+echo "  <img "
+echo "    src={getAssetPath('/images/lashon-text-logo.png')} "
+echo "    alt=\"LASHON\" "
+echo "    className=\"h-8 sm:hidden\" "
+echo "  />"
+echo "</Link>"
+echo "-------------------------------------------"
+echo ""
+
+echo "Responsive fixes completed!"

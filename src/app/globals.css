@@ -40,7 +40,15 @@
 }
 
 @layer utilities {
-  .font-rendering {
+  /* Hero text container */ 
+  .hero-text-container { 
+    overflow-x: hidden; 
+    max-width: 100%; 
+  }  /* Hero text container */ 
+  .hero-text-container { 
+    overflow-x: hidden; 
+    max-width: 100%; 
+  }  .font-rendering {
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
