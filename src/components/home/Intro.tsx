@@ -74,15 +74,15 @@ export default function Intro() {
           <img 
             src={getAssetPath('/images/lashon-text-logo.png')} 
             alt="LASHON" 
-            className="w-full max-w-[280px] mx-auto mb-4 sm:mb-6" 
+            className="w-full max-w-[140px] mx-auto mb-4 sm:mb-6" 
           />
         ) : (
-          <h1 className="text-[3.5rem] xs:text-[4.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-amsterdam text-white mb-4 sm:mb-6 leading-[0.9] tracking-normal intro-title">
+          <h1 className="text-[1.75rem] xs:text-[2.25rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] font-amsterdam text-white mb-4 sm:mb-6 leading-[0.9] tracking-normal intro-title">
             LASHON
           </h1>
         )}
         
-        <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 font-poppins max-w-2xl mx-auto intro-tagline">
+        <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 font-poppins max-w-2xl mx-auto intro-tagline">
           {screenWidth < 375 ? 
             "Miami-Born • NY-Trained • Rising" : 
             "Miami-Born • New York-Trained • Ready to Rise"
@@ -91,7 +91,7 @@ export default function Intro() {
         
         <a
           href="#latest-release"
-          className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+          className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
         >
           Explore My Music
         </a>
