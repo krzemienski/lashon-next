@@ -1,12 +1,11 @@
 @font-face {
-  font-family: 'Amsterdam Three';
-  src: url('/fonts/AmsterdamThree.woff2') format('woff2'),
-       url('/fonts/AmsterdamThree.woff') format('woff');
+  font-family: 'Amsterdam';
+  src: url('/lashon-next/Amsterdam.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 .font-amsterdam {
-  font-family: 'Amsterdam Three', serif;
+  font-family: 'Amsterdam', serif;
 }
