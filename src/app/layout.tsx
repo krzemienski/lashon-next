@@ -1,4 +1,5 @@
 import { Montserrat, Open_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import '@/styles/fonts.css';
 import MainLayout from '@/components/layout/MainLayout';
@@ -14,6 +15,11 @@ const openSans = Open_Sans({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-open-sans',
+});
+
+const amsterdam = localFont({
+  src: '../../public/Amsterdam.ttf',
+  variable: '--font-amsterdam',
 });
 
 export const metadata = {
@@ -62,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${openSans.variable} scroll-smooth`}>
+    <html lang="en" className={`${amsterdam.variable} ${montserrat.variable} ${openSans.variable} scroll-smooth`}>
       <head>
         <meta name="theme-color" content="#000000" />
         <link rel="manifest" href={getAssetPath('/manifest.json')} />

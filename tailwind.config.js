@@ -28,7 +28,7 @@ module.exports = {
         rockSalt: ["Rock Salt", "sans-serif"],
         montserrat: ['var(--font-montserrat)'],
         'open-sans': ['var(--font-open-sans)'],
-        amsterdam: ['Amsterdam', 'serif'],
+        amsterdam: ['var(--font-amsterdam)', 'serif'],
       },
       colors: {
         emerald: {
