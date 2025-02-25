@@ -23,7 +23,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <div className="container-width py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="text-2xl font-amsterdam text-gold hover:text-burnt-orange transition-colors">
+            <Link href="/" className="text-4xl font-amsterdam text-gold hover:text-burnt-orange transition-colors leading-none">
               LASHON
             </Link>
 

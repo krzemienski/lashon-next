@@ -54,7 +54,7 @@ export default function Intro() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-6xl sm:text-8xl font-bold text-white mb-6 font-amsterdam">
+        <h1 className="text-[12rem] sm:text-[16rem] font-normal text-white mb-6 font-amsterdam leading-none">
           LASHON
         </h1>
         <p className="text-xl sm:text-2xl text-gray-200 mb-8">
