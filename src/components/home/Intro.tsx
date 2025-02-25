@@ -28,7 +28,7 @@ export default function Intro() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Video Background */}
       <div className="absolute inset-0">
@@ -49,20 +49,20 @@ export default function Intro() {
 
       {/* Content */}
       <motion.div 
-        className="container-width relative z-10 text-center"
+        className="container-width relative z-10 text-center px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-[4rem] xs:text-[6rem] sm:text-[8rem] md:text-[12rem] lg:text-[14rem] xl:text-[16rem] font-amsterdam text-white mb-4 sm:mb-6 leading-[0.8] tracking-normal">
+        <h1 className="text-[3.5rem] xs:text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem] xl:text-[13rem] font-amsterdam text-white mb-6 leading-[0.85] tracking-normal">
           LASHON
         </h1>
-        <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-4 sm:mb-6 font-poppins max-w-[90%] mx-auto">
+        <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 font-poppins max-w-2xl mx-auto">
           Miami-Born • New York-Trained • Ready to Rise
         </p>
         <a
           href="#latest-release"
-          className="btn-primary text-base sm:text-lg"
+          className="btn-primary text-base sm:text-lg px-8 py-4"
         >
           Explore My Music
         </a>

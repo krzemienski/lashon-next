@@ -12,26 +12,30 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
   body {
-    @apply bg-black text-white;
+    @apply bg-black text-white min-h-[100dvh] overflow-x-hidden;
   }
 }
 
 @layer components {
   .container-width {
-    @apply w-[90%] max-w-7xl mx-auto;
+    @apply w-[95%] sm:w-[90%] max-w-7xl mx-auto;
   }
 
   .section-padding {
-    @apply py-16 sm:py-24;
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
   }
 
   .btn-primary {
-    @apply inline-flex items-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-gold to-burnt-orange hover:from-burnt-orange hover:to-gold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-gold to-burnt-orange hover:from-burnt-orange hover:to-gold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center px-6 py-3 text-base font-medium text-gold border-2 border-gold hover:bg-gold/10 rounded-lg transition-all duration-300;
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gold border-2 border-gold hover:bg-gold/10 rounded-lg transition-all duration-300 whitespace-nowrap;
   }
 }
 

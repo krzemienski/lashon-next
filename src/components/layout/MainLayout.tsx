@@ -20,15 +20,15 @@ export default function MainLayout({ children }: MainLayoutProps) {
     <>
       {/* Navigation */}
       <nav className="fixed w-full z-50 bg-black/90 backdrop-blur-sm">
-        <div className="container-width py-4">
+        <div className="container-width py-2 sm:py-3 md:py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="text-2xl xs:text-3xl font-amsterdam text-gold hover:text-burnt-orange transition-colors leading-none">
+            <Link href="/" className="text-xl xs:text-2xl sm:text-3xl font-amsterdam text-gold hover:text-burnt-orange transition-colors leading-none">
               LASHON
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-6 lg:space-x-8 text-sm lg:text-base">
               <Link href="/" className="text-white hover:text-gold transition-colors">
                 Home
               </Link>
