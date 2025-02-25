@@ -6,6 +6,14 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      'xs': '375px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       backgroundImage: {
         "album-cover": "url('/panic-panini-album.jpg')",
@@ -20,7 +28,7 @@ module.exports = {
         rockSalt: ["Rock Salt", "sans-serif"],
         montserrat: ['var(--font-montserrat)'],
         'open-sans': ['var(--font-open-sans)'],
-        amsterdam: ['Amsterdam Three', 'serif'],
+        amsterdam: ['Amsterdam', 'serif'],
       },
       colors: {
         emerald: {
@@ -49,23 +57,7 @@ module.exports = {
           light: '#FFD700',
           dark: '#B8860B',
         },
-        'burnt-orange': {
-          DEFAULT: '#CC5500',
-          light: '#FF6600',
-          dark: '#A04000',
-        },
-        yellow: {
-          50: '#FFFFF0',
-          100: '#FEFCBF',
-          200: '#FAF089',
-          300: '#F6E05E',
-          400: '#F6E05E',
-          500: '#ECC94B',
-          600: '#D69E2E',
-          700: '#B7791F',
-          800: '#975A16',
-          900: '#744210',
-        },
+        'burnt-orange': '#CC5500',
       },
       boxShadow: {
         "centered-shadow": "0px 0px 19px 4px rgba(0,0,0,0.1)",

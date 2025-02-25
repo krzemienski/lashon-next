@@ -1,11 +1,18 @@
 @font-face {
   font-family: 'Amsterdam';
-  src: url('/lashon-next/Amsterdam.ttf') format('truetype');
+  src: url('/Amsterdam.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 .font-amsterdam {
-  font-family: 'Amsterdam', serif;
+  font-family: 'Amsterdam', cursive;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }

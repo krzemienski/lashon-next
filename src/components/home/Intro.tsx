@@ -54,15 +54,15 @@ export default function Intro() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-[12rem] sm:text-[16rem] font-normal text-white mb-6 font-amsterdam leading-none">
+        <h1 className="text-[5rem] xs:text-[6rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] xl:text-[16rem] font-amsterdam text-white mb-6 leading-[0.8] tracking-normal">
           LASHON
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-200 mb-8">
+        <p className="text-lg xs:text-xl sm:text-2xl text-gray-200 mb-8">
           Miami-Born • New York-Trained • Ready to Rise
         </p>
         <a
           href="#latest-release"
-          className="btn-primary"
+          className="btn-primary text-base sm:text-lg"
         >
           Explore My Music
         </a>

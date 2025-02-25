@@ -6,7 +6,7 @@ const nextConfig = {
   },
   trailingSlash: true,
   basePath: '/lashon-next',
-  assetPrefix: '/lashon-next/',
+  assetPrefix: '/lashon-next',
 }
 
 module.exports = nextConfig
