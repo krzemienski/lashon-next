@@ -18,8 +18,10 @@ const openSans = Open_Sans({
 });
 
 const amsterdam = localFont({
-  src: '../../public/Amsterdam.ttf',
+  src: './Amsterdam.ttf',
   variable: '--font-amsterdam',
+  display: 'swap',
+  preload: true,
 });
 
 export const metadata = {
