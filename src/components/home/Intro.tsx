@@ -54,10 +54,10 @@ export default function Intro() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-[3.5rem] xs:text-[4.5rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] xl:text-[16rem] font-amsterdam text-white mb-4 sm:mb-6 leading-[0.8] tracking-normal">
+        <h1 className="text-[4rem] xs:text-[6rem] sm:text-[8rem] md:text-[12rem] lg:text-[14rem] xl:text-[16rem] font-amsterdam text-white mb-4 sm:mb-6 leading-[0.8] tracking-normal">
           LASHON
         </h1>
-        <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 font-poppins">
+        <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-4 sm:mb-6 font-poppins max-w-[90%] mx-auto">
           Miami-Born • New York-Trained • Ready to Rise
         </p>
         <a
