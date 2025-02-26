@@ -2,7 +2,7 @@
     font-family: "Amsterdam";
     font-style: normal;
     font-weight: normal;
-    src: local('Amsterdam'), url('/fonts/Amsterdam.woff') format('woff');
+    src: local('Amsterdam'), url('/lashon-next/fonts/Amsterdam.woff') format('woff');
 }
 
 .font-amsterdam {

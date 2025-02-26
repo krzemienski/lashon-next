@@ -1,3 +1,4 @@
 export function getAssetPath(path: string): string {
-  return path;
+  const basePath = '/lashon-next';
+  return `${basePath}${path}`;
 }
