@@ -5,8 +5,6 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: '/lashon-next',
-  assetPrefix: '/lashon-next/',
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(ttf|woff|woff2)$/,
@@ -14,7 +12,6 @@ const nextConfig = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          publicPath: '/lashon-next/',
         },
       },
     });

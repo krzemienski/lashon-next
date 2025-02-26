@@ -71,14 +71,12 @@ export default function Intro() {
         transition={{ duration: 0.8 }}
       >
         {screenWidth < 375 ? (
-          <img 
-            src={getAssetPath('/images/lashon-text-logo.png')} 
-            alt="LASHON" 
-            className="w-full max-w-[280px] mx-auto mb-6" 
-          />
+          <h1 className="text-[2.5rem] font-amsterdam text-white mb-6 leading-[1.1] tracking-normal">
+            Lashon
+          </h1>
         ) : (
-          <h1 className="text-[3.5rem] xs:text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem] xl:text-[13rem] font-amsterdam text-white mb-6 leading-[0.85] tracking-normal">
-            LASHON
+          <h1 className="text-[4rem] xs:text-[5.5rem] sm:text-[7.5rem] md:text-[9.5rem] lg:text-[11.5rem] xl:text-[14rem] font-amsterdam text-white mb-6 leading-[0.9] tracking-normal">
+            Lashon
           </h1>
         )}
         

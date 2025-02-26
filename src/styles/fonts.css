@@ -1,28 +1,25 @@
 @font-face {
-    font-family: "Amsterdam Four_ttf";
-    src: url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.eot");
-    src: url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/07cb29fdcb073fff840edc6de2067b50.svg#Amsterdam Four_ttf")format("svg");
+    font-family: "Amsterdam";
+    font-style: normal;
+    font-weight: normal;
+    src: local('Amsterdam'), url('/fonts/Amsterdam.woff') format('woff');
 }
 
 .font-amsterdam {
-  font-family: "Amsterdam Four_ttf", serif;
+  font-family: "Amsterdam", serif;
   font-weight: normal;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 /* Media queries for font optimization */
-@media (max-width: 375px) {
+@media (max-width: 768px) {
   .font-amsterdam {
-    letter-spacing: -0.02em;
+    letter-spacing: 0.01em;
   }
   
   .hero-text-container {
@@ -31,32 +28,15 @@
   }
   
   .tagline-text {
-    font-size: 0.875rem;
-    padding: 0 0.5rem;
+    font-size: 1rem;
+    padding: 0 1rem;
   }
 }
 
-/* Media queries for font optimization */
+/* Media queries for small mobile devices */
 @media (max-width: 375px) {
   .font-amsterdam {
-    letter-spacing: -0.02em;
-  }
-  
-  .hero-text-container {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-  
-  .tagline-text {
-    font-size: 0.875rem;
-    padding: 0 0.5rem;
-  }
-}
-
-/* Media queries for font optimization */
-@media (max-width: 375px) {
-  .font-amsterdam {
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
   }
   
   .hero-text-container {

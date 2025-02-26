@@ -65,9 +65,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-[1.5rem] xs:text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold text-white mb-4 sm:mb-6 tracking-wider hero-text"
+            className="text-[2rem] xs:text-[2.5rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[5rem] font-amsterdam text-white mb-4 sm:mb-6 leading-[1.1] tracking-normal"
           >
-            LASHON
+            Lashon
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

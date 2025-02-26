@@ -38,8 +38,8 @@ export default function Footer() {
       <div className="container-width">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <a href="/" className="text-2xl xs:text-3xl font-amsterdam text-gold hover:text-burnt-orange transition-colors leading-none">
-              LASHON
+            <a href="/" className="text-2xl xs:text-3xl sm:text-4xl font-amsterdam text-gold hover:text-burnt-orange transition-colors leading-[1.1]">
+              Lashon
             </a>
           </div>
           <div className="flex space-x-6">
