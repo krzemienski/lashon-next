@@ -71,16 +71,16 @@ export default function Intro() {
         transition={{ duration: 0.8 }}
       >
         {screenWidth < 375 ? (
-          <h1 className="text-[2.5rem] font-amsterdam text-white mb-6 leading-[1.1] tracking-normal">
+          <h1 className="text-[3rem] font-amsterdam text-white mb-4 md:mb-6 leading-[1.1] tracking-normal">
             Lashon
           </h1>
         ) : (
-          <h1 className="text-[4rem] xs:text-[5.5rem] sm:text-[7.5rem] md:text-[9.5rem] lg:text-[11.5rem] xl:text-[14rem] font-amsterdam text-white mb-6 leading-[0.9] tracking-normal">
+          <h1 className="text-[4.5rem] xs:text-[5.5rem] sm:text-[7.5rem] md:text-[9.5rem] lg:text-[11.5rem] xl:text-[13rem] font-amsterdam text-white mb-4 md:mb-6 leading-[0.9] tracking-normal">
             Lashon
           </h1>
         )}
         
-        <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 font-poppins max-w-2xl mx-auto tagline-text">
+        <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 md:mb-8 font-poppins max-w-2xl mx-auto tagline-text">
           {screenWidth < 375 ? 
             "Miami-Born • NY-Trained • Rising" : 
             "Miami-Born • New York-Trained • Ready to Rise"
@@ -89,7 +89,7 @@ export default function Intro() {
         
         <a
           href="#latest-release"
-          className="btn-primary text-base sm:text-lg px-8 py-4"
+          className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
         >
           Explore My Music
         </a>

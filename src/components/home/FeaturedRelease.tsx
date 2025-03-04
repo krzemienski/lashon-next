@@ -24,7 +24,7 @@ export default function FeaturedRelease() {
       </div>
 
       {/* Content */}
-      <div className="container-width relative z-10 py-24">
+      <div className="container-width relative z-10 py-16 sm:py-20 md:py-24">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -32,13 +32,13 @@ export default function FeaturedRelease() {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto px-4"
         >
-          <div className="text-center mb-12">
-            <h2 className="text-5xl font-poppins font-semibold text-gold mb-4">Latest Release</h2>
-            <p className="text-xl text-white/90">Experience the evolution of sound</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-4xl sm:text-5xl font-poppins font-semibold text-gold mb-3 sm:mb-4">Latest Release</h2>
+            <p className="text-lg sm:text-xl text-white/90">Experience the evolution of sound</p>
           </div>
 
-          <div className="bg-black/40 backdrop-blur-sm rounded-lg overflow-hidden p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="bg-black/40 backdrop-blur-sm rounded-lg overflow-hidden p-5 sm:p-6 md:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="aspect-square relative rounded-lg overflow-hidden shadow-2xl">
                 <img
                   src={getAssetPath('/images/hero-explore.jpeg')}
@@ -46,19 +46,19 @@ export default function FeaturedRelease() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div>
-                  <h3 className="text-4xl font-poppins font-semibold text-gold mb-4">Moolah</h3>
-                  <p className="text-gray-300 text-lg">
+                  <h3 className="text-3xl sm:text-4xl font-poppins font-semibold text-gold mb-3 sm:mb-4">Moolah</h3>
+                  <p className="text-gray-300 text-base sm:text-lg">
                     A fusion of hip-hop and R&B that showcases the unique sound and style that defines Lashon's music.
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-3 sm:gap-4">
                   <a
                     href="https://open.spotify.com/artist/2RP2ySZkyeBJ2HePYTpTve"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary"
+                    className="btn-primary px-4 sm:px-5 py-2.5 sm:py-3"
                   >
                     Listen on Spotify
                   </a>
@@ -66,7 +66,7 @@ export default function FeaturedRelease() {
                     href="https://music.apple.com/us/artist/lashon/1745818645"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary"
+                    className="btn-secondary px-4 sm:px-5 py-2.5 sm:py-3"
                   >
                     Apple Music
                   </a>

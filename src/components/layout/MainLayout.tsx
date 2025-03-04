@@ -20,15 +20,15 @@ export default function MainLayout({ children }: MainLayoutProps) {
     <>
       {/* Navigation */}
       <nav className="fixed w-full z-50 bg-black/90 backdrop-blur-sm">
-        <div className="container-width py-2 sm:py-3 md:py-4">
+        <div className="container-width py-3 sm:py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-amsterdam text-gold hover:text-burnt-orange transition-colors leading-[1.1]">
+            <Link href="/" className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-amsterdam text-gold hover:text-burnt-orange transition-colors leading-[1.1]">
               Lashon
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-6 lg:space-x-8 text-sm lg:text-base">
+            <div className="hidden md:flex space-x-4 lg:space-x-6 xl:space-x-8 text-sm lg:text-base">
               <Link href="/" className="text-white hover:text-gold transition-colors">
                 Home
               </Link>
@@ -48,7 +48,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-white p-2"
+              className="md:hidden text-white p-1 sm:p-2"
               onClick={toggleMenu}
               aria-label="Toggle Menu"
             >
@@ -80,7 +80,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden bg-black/95"
             >
-              <div className="container-width py-4 flex flex-col space-y-4">
+              <div className="container-width py-3 md:py-4 flex flex-col space-y-3 md:space-y-4">
                 <Link
                   href="/"
                   className="text-white hover:text-gold transition-colors"

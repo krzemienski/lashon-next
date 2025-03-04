@@ -23,7 +23,7 @@
 
 @layer components {
   .container-width {
-    @apply w-[95%] sm:w-[90%] max-w-7xl mx-auto;
+    @apply w-[92%] xs:w-[90%] sm:w-[90%] max-w-7xl mx-auto;
   }
 
   .section-padding {
@@ -31,11 +31,11 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center text-sm sm:text-base font-medium text-white bg-gradient-to-r from-gold to-burnt-orange hover:from-burnt-orange hover:to-gold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap;
+    @apply inline-flex items-center justify-center text-sm sm:text-base font-medium text-white bg-gradient-to-r from-gold to-burnt-orange hover:from-burnt-orange hover:to-gold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap px-5 sm:px-6 py-2.5 sm:py-3;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-gold border-2 border-gold hover:bg-gold/10 rounded-lg transition-all duration-300 whitespace-nowrap;
+    @apply inline-flex items-center justify-center px-4 sm:px-5 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-gold border-2 border-gold hover:bg-gold/10 rounded-lg transition-all duration-300 whitespace-nowrap;
   }
 }
 
@@ -44,6 +44,7 @@
   .hero-text-container { 
     overflow-x: hidden; 
     max-width: 100%; 
+    padding: 0 0.5rem;
   }
   .hero-text {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);

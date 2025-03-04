@@ -57,7 +57,11 @@ module.exports = {
           light: '#FFD700',
           dark: '#B8860B',
         },
-        'burnt-orange': '#CC5500',
+        'burnt-orange': {
+          DEFAULT: '#CC5500',
+          light: '#FF7722',
+          dark: '#A33D00',
+        },
       },
       boxShadow: {
         "centered-shadow": "0px 0px 19px 4px rgba(0,0,0,0.1)",

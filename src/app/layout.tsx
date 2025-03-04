@@ -25,7 +25,6 @@ const poppins = Poppins({
 export const metadata = {
   title: 'Lashon Music',
   description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
-  themeColor: '#000000',
   manifest: '/manifest.json',
   icons: {
     icon: '/favicon.ico',
@@ -60,6 +59,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
+  themeColor: '#000000',
 };
 
 export default function RootLayout({
@@ -70,7 +70,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable} ${poppins.variable} scroll-smooth`}>
       <head>
-        <meta name="theme-color" content="#000000" />
         <link rel="manifest" href={getAssetPath('/manifest.json')} />
       </head>
       <body className="antialiased font-sans">
