@@ -43,7 +43,7 @@ export const metadata = {
     siteName: 'Lashon Music',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: getAssetPath('/images/og-image.jpg'),
         width: 1200,
         height: 630,
         alt: 'Lashon Music',
@@ -56,7 +56,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Lashon Music',
     description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
-    images: ['/images/twitter-image.jpg'],
+    images: [getAssetPath('/images/twitter-image.jpg')],
   },
 };
 

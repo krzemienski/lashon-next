@@ -5,8 +5,9 @@
   "homepage": "https://lashon.me",
   "scripts": {
     "copy-fonts": "node scripts/copy-fonts.js",
+    "generate-logos": "node scripts/generate-logos.js",
     "dev": "npm run copy-fonts && next dev",
-    "build": "npm run copy-fonts && next build",
+    "build": "npm run copy-fonts && npm run generate-logos && next build",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
@@ -28,6 +29,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "canvas": "^3.1.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "file-loader": "^6.2.0",
