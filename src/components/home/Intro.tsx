@@ -17,14 +17,14 @@ export default function Intro() {
   useEffect(() => {
     // Set initial screen width
     setScreenWidth(window.innerWidth);
-    
+
     // Update screen width on resize
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
 
     window.addEventListener('resize', handleResize);
-    
+
     // Video handling
     if (videoRef.current) {
       videoRef.current.load();
@@ -44,7 +44,7 @@ export default function Intro() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-black"
+      className="relative min-h-[100dvh] flex items-center justify-center bg-black"
     >
       {/* Video Background */}
       <div className="absolute inset-0">
@@ -64,32 +64,34 @@ export default function Intro() {
       </div>
 
       {/* Content */}
-      <motion.div 
-        className="container-width relative z-10 text-center px-4 hero-text-container"
+      <motion.div
+        className="container-width relative z-10 text-center px-4 py-16 md:py-0 hero-text-container flex flex-col items-center"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8 }}
       >
-        {screenWidth < 375 ? (
-          <h1 className="text-[3rem] font-amsterdam text-white mb-4 md:mb-6 leading-[1.1] tracking-normal">
-            Lashon
-          </h1>
-        ) : (
-          <h1 className="text-[4.5rem] xs:text-[5.5rem] sm:text-[7.5rem] md:text-[9.5rem] lg:text-[11.5rem] xl:text-[13rem] font-amsterdam text-white mb-4 md:mb-6 leading-[0.9] tracking-normal">
-            Lashon
-          </h1>
-        )}
-        
-        <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 md:mb-8 font-poppins max-w-2xl mx-auto tagline-text">
-          {screenWidth < 375 ? 
-            "Miami-Born • NY-Trained • Rising" : 
+        <div className="mb-6 md:mb-8 lg:mb-10">
+          {screenWidth < 375 ? (
+            <h1 className="text-[2.5rem] font-amsterdam text-white leading-[1] tracking-normal pl-4">
+              Lashon
+            </h1>
+          ) : (
+            <h1 className="text-[3.5rem] xs:text-[4.2rem] sm:text-[5rem] md:text-[6rem] lg:text-[7.5rem] xl:text-[9rem] font-amsterdam text-white leading-[1] tracking-normal pl-5">
+              Lashon
+            </h1>
+          )}
+        </div>
+
+        <p className="text-base xs:text-lg sm:text-xl md:text-xl text-gray-200 mb-8 md:mb-10 font-poppins max-w-2xl mx-auto tagline-text tracking-wide">
+          {screenWidth < 375 ?
+            "Miami-Born • NY-Trained • Rising" :
             "Miami-Born • New York-Trained • Ready to Rise"
           }
         </p>
-        
+
         <a
           href="#latest-release"
-          className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+          className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 inline-block"
         >
           Explore My Music
         </a>

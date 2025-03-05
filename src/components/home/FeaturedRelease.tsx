@@ -41,21 +41,21 @@ export default function FeaturedRelease() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="aspect-square relative rounded-lg overflow-hidden shadow-2xl">
                 <img
-                  src={getAssetPath('/images/hero-explore.jpeg')}
+                  src={getAssetPath('/images/woman-cover.jpg')}
                   alt="Latest Release Cover"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="space-y-6 sm:space-y-8">
                 <div>
-                  <h3 className="text-3xl sm:text-4xl font-poppins font-semibold text-gold mb-3 sm:mb-4">Moolah</h3>
+                  <h3 className="text-3xl sm:text-4xl font-poppins font-semibold text-gold mb-3 sm:mb-4">Woman</h3>
                   <p className="text-gray-300 text-base sm:text-lg">
                     A fusion of hip-hop and R&B that showcases the unique sound and style that defines Lashon's music.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-3 sm:gap-4">
                   <a
-                    href="https://open.spotify.com/artist/2RP2ySZkyeBJ2HePYTpTve"
+                    href="https://open.spotify.com/track/40ucNDEPQHb5nIcAa0XYGd?si=72ada46e9bda4251"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary px-4 sm:px-5 py-2.5 sm:py-3"
@@ -63,7 +63,7 @@ export default function FeaturedRelease() {
                     Listen on Spotify
                   </a>
                   <a
-                    href="https://music.apple.com/us/artist/lashon/1745818645"
+                    href="https://music.apple.com/us/album/woman/1776458294?i=1776458295"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary px-4 sm:px-5 py-2.5 sm:py-3"

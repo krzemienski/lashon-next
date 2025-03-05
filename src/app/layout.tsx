@@ -3,6 +3,7 @@ import './globals.css';
 import '@/styles/fonts.css';
 import MainLayout from '@/components/layout/MainLayout';
 import { getAssetPath } from '@/utils/assetPath';
+import Script from 'next/script';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -22,10 +23,14 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
+// Define basePath for static exports
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const metadata = {
   title: 'Lashon Music',
   description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
   manifest: '/manifest.json',
+  metadataBase: new URL('https://lashon.me'),
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
@@ -34,7 +39,7 @@ export const metadata = {
   openGraph: {
     title: 'Lashon Music',
     description: 'Miami-born artist Lashon fuses hip-hop, R&B, and soul into a powerful performance style.',
-    url: 'https://lashonmusic.com',
+    url: 'https://lashon.me',
     siteName: 'Lashon Music',
     images: [
       {
@@ -71,6 +76,37 @@ export default function RootLayout({
     <html lang="en" className={`${montserrat.variable} ${openSans.variable} ${poppins.variable} scroll-smooth`}>
       <head>
         <link rel="manifest" href={getAssetPath('/manifest.json')} />
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-15KPGZEEFT"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-15KPGZEEFT');
+          `}
+        </Script>
+        <Script id="custom-font-loader" strategy="afterInteractive">
+          {`
+            if (typeof document !== 'undefined') {
+              const basePath = '${basePath}';
+              const amsterdamFontFace = new FontFace(
+                'Amsterdam',
+                'url(' + basePath + '/fonts/Amsterdam.woff) format("woff")',
+                { style: 'normal', weight: 'normal' }
+              );
+
+              amsterdamFontFace.load().then((loadedFace) => {
+                document.fonts.add(loadedFace);
+              }).catch((error) => {
+                console.error('Error loading Amsterdam font:', error);
+              });
+            }
+          `}
+        </Script>
       </head>
       <body className="antialiased font-sans">
         <MainLayout>{children}</MainLayout>

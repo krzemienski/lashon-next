@@ -11,10 +11,11 @@ export default function Header() {
 
   return (
     <header className="fixed w-full z-50 bg-black/80 backdrop-blur-md">
-      <nav className="container-width flex items-center justify-between p-4">
+      <nav className="container-width flex items-center justify-between p-2 md:p-3">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-white">
-          LASHON
+        <Link href="/" className="text-2xl font-bold text-white pl-3 tracking-wider flex items-center">
+          <span className="font-amsterdam text-[1.6rem] mr-1 pb-1">L</span>
+          <span className="relative top-[2px]">ASHON</span>
         </Link>
 
         {/* Desktop Navigation */}

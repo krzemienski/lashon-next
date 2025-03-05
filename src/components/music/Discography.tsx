@@ -7,17 +7,28 @@ import { getAssetPath } from '@/utils/assetPath';
 
 const releases = [
   {
-    title: 'Moolah',
-    coverImage: getAssetPath('/images/moolah-cover.jpg'),
+    title: 'Woman',
+    coverImage: getAssetPath('/images/woman-cover.jpg'),
     description: 'Latest single showcasing the evolution of sound',
     streamingLinks: [
       {
         platform: 'Spotify',
-        url: 'https://open.spotify.com/track/moolah'
+        url: 'https://open.spotify.com/track/40ucNDEPQHb5nIcAa0XYGd?si=72ada46e9bda4251'
       },
       {
         platform: 'Apple Music',
-        url: 'https://music.apple.com/track/moolah'
+        url: 'https://music.apple.com/us/album/woman/1776458294?i=1776458295'
+      }
+    ]
+  },
+  {
+    title: 'Moolah',
+    coverImage: getAssetPath('/images/moolah.jpg'),
+    description: 'Hip-hop single with a unique sound',
+    streamingLinks: [
+      {
+        platform: 'Spotify',
+        url: 'https://open.spotify.com/track/1KzzUznXjhchvi1z0Ds89l?si=d2116b291b0d4832'
       }
     ]
   }

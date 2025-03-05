@@ -5,8 +5,9 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: '/lashon-next',
-  assetPrefix: '/lashon-next/',
+  // For GitHub Pages deployment with custom domain
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(ttf|woff|woff2)$/,
@@ -14,7 +15,7 @@ const nextConfig = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          publicPath: '/lashon-next/',
+          publicPath: '/',
         },
       },
     });

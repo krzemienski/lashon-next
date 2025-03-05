@@ -2,18 +2,35 @@
     font-family: "Amsterdam";
     font-style: normal;
     font-weight: normal;
-    src: local('Amsterdam'), url('/lashon-next/fonts/Amsterdam.woff') format('woff');
+    src: local('Amsterdam'),
+         url('/fonts/Amsterdam.woff') format('woff');
+    font-display: swap;
+}
+
+/* Fallback font definition in case the custom font fails to load */
+@font-face {
+    font-family: "Amsterdam-fallback";
+    font-style: normal;
+    font-weight: normal;
+    src: local('Georgia'), local('Times New Roman'), local('serif');
+    font-display: swap;
 }
 
 .font-amsterdam {
-  font-family: "Amsterdam", serif;
+  font-family: "Amsterdam", "Amsterdam-fallback", serif;
   font-weight: normal;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   text-transform: none;
+  padding-left: 0.2em;
+  padding-bottom: 0.5em;
+  margin-top: 0.2em;
+  display: inline-block;
+  line-height: 0.8;
+  overflow: visible;
 }
 
 /* Media queries for font optimization */
@@ -21,12 +38,12 @@
   .font-amsterdam {
     letter-spacing: 0.01em;
   }
-  
+
   .hero-text-container {
     overflow-x: hidden;
     max-width: 100%;
   }
-  
+
   .tagline-text {
     font-size: 1rem;
     padding: 0 1rem;
@@ -38,12 +55,12 @@
   .font-amsterdam {
     letter-spacing: 0;
   }
-  
+
   .hero-text-container {
     overflow-x: hidden;
     max-width: 100%;
   }
-  
+
   .tagline-text {
     font-size: 0.875rem;
     padding: 0 0.5rem;

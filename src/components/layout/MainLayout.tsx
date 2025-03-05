@@ -1,9 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Footer from './Footer';
+import useAnalytics from '@/hooks/useAnalytics';
+import { trackEvent } from '@/utils/analytics';
+
+// Analytics component wrapped in Suspense
+function Analytics() {
+  useAnalytics();
+  return null;
+}
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -11,9 +19,19 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    // Track menu toggle event
+    trackEvent('menu_toggle', { state: !isMenuOpen ? 'open' : 'closed' });
+  };
+
+  // Track navigation link clicks
+  const handleNavLinkClick = (linkName: string) => {
+    trackEvent('navigation_click', { link: linkName });
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
   };
 
   return (
@@ -23,25 +41,49 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <div className="container-width py-3 sm:py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-amsterdam text-gold hover:text-burnt-orange transition-colors leading-[1.1]">
+            <Link 
+              href="/" 
+              className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-amsterdam text-gold hover:text-burnt-orange transition-colors leading-[1.1]"
+              onClick={() => handleNavLinkClick('logo')}
+            >
               Lashon
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-4 lg:space-x-6 xl:space-x-8 text-sm lg:text-base">
-              <Link href="/" className="text-white hover:text-gold transition-colors">
+              <Link 
+                href="/" 
+                className="text-white hover:text-gold transition-colors"
+                onClick={() => handleNavLinkClick('home')}
+              >
                 Home
               </Link>
-              <Link href="/about" className="text-white hover:text-gold transition-colors">
+              <Link 
+                href="/about" 
+                className="text-white hover:text-gold transition-colors"
+                onClick={() => handleNavLinkClick('about')}
+              >
                 About
               </Link>
-              <Link href="/music" className="text-white hover:text-gold transition-colors">
+              <Link 
+                href="/music" 
+                className="text-white hover:text-gold transition-colors"
+                onClick={() => handleNavLinkClick('music')}
+              >
                 Music
               </Link>
-              <Link href="/gallery" className="text-white hover:text-gold transition-colors">
+              <Link 
+                href="/gallery" 
+                className="text-white hover:text-gold transition-colors"
+                onClick={() => handleNavLinkClick('gallery')}
+              >
                 Gallery
               </Link>
-              <Link href="/contact" className="text-white hover:text-gold transition-colors">
+              <Link 
+                href="/contact" 
+                className="text-white hover:text-gold transition-colors"
+                onClick={() => handleNavLinkClick('contact')}
+              >
                 Contact
               </Link>
             </div>
@@ -84,35 +126,35 @@ export default function MainLayout({ children }: MainLayoutProps) {
                 <Link
                   href="/"
                   className="text-white hover:text-gold transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavLinkClick('home_mobile')}
                 >
                   Home
                 </Link>
                 <Link
                   href="/about"
                   className="text-white hover:text-gold transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavLinkClick('about_mobile')}
                 >
                   About
                 </Link>
                 <Link
                   href="/music"
                   className="text-white hover:text-gold transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavLinkClick('music_mobile')}
                 >
                   Music
                 </Link>
                 <Link
                   href="/gallery"
                   className="text-white hover:text-gold transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavLinkClick('gallery_mobile')}
                 >
                   Gallery
                 </Link>
                 <Link
                   href="/contact"
                   className="text-white hover:text-gold transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavLinkClick('contact_mobile')}
                 >
                   Contact
                 </Link>
@@ -124,6 +166,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
       {/* Main Content */}
       <main className="min-h-screen flex flex-col bg-black">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Analytics />
+        </Suspense>
         <AnimatePresence mode="wait">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

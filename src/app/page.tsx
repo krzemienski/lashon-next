@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main>
       <Intro />
       <FeaturedRelease />
       <AboutTeaser />

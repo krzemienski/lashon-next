@@ -5,6 +5,9 @@ import { getAssetPath } from '@/utils/assetPath';
 export const metadata = {
   title: 'Gallery | Lashon',
   description: 'View photos from Lashon\'s performances, studio sessions, and more.',
+};
+
+export const viewport = {
   themeColor: '#000000',
 };
 

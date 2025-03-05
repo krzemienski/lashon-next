@@ -14,9 +14,9 @@ interface MusicPlayerProps {
   }[];
 }
 
-export default function MusicPlayer({ 
+export default function MusicPlayer({
   coverImage = 'https://via.placeholder.com/300',
-  title = "Moolah",
+  title = "Woman",
   description = "",
   streamingLinks = [
     {

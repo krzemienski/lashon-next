@@ -5,6 +5,9 @@ import { getAssetPath } from '@/utils/assetPath';
 export const metadata = {
   title: 'Contact | Lashon',
   description: 'Get in touch with Lashon for bookings, collaborations, or just to say hello.',
+};
+
+export const viewport = {
   themeColor: '#000000',
 };
 
