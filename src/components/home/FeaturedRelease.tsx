@@ -41,7 +41,7 @@ export default function FeaturedRelease() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="aspect-square relative rounded-lg overflow-hidden shadow-2xl">
                 <img
-                  src={getAssetPath('/images/woman-cover.jpg')}
+                  src={getAssetPath('/images/woman.JPG')}
                   alt="Latest Release Cover"
                   className="w-full h-full object-cover"
                 />

@@ -8,7 +8,7 @@ import { getAssetPath } from '@/utils/assetPath';
 const releases = [
   {
     title: 'Woman',
-    coverImage: getAssetPath('/images/woman-cover.jpg'),
+    coverImage: getAssetPath('/images/woman.JPG'),
     description: 'Latest single showcasing the evolution of sound',
     streamingLinks: [
       {
@@ -29,6 +29,10 @@ const releases = [
       {
         platform: 'Spotify',
         url: 'https://open.spotify.com/track/1KzzUznXjhchvi1z0Ds89l?si=d2116b291b0d4832'
+      },
+      {
+        platform: 'Apple Music',
+        url: 'https://music.apple.com/us/album/moolah/1746215108?i=1746215110'
       }
     ]
   }

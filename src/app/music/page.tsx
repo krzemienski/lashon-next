@@ -25,7 +25,7 @@ export default function MusicPage() {
             <MusicPlayer
               title="Woman"
               description="Latest single showcasing the evolution of sound"
-              coverImage={getAssetPath('/images/woman-cover.jpg')}
+              coverImage={getAssetPath('/images/woman.JPG')}
               streamingLinks={[
                 {
                   platform: 'Spotify',
@@ -45,6 +45,10 @@ export default function MusicPage() {
                 {
                   platform: 'Spotify',
                   url: 'https://open.spotify.com/track/1KzzUznXjhchvi1z0Ds89l?si=d2116b291b0d4832'
+                },
+                {
+                  platform: 'Apple Music',
+                  url: 'https://music.apple.com/us/album/moolah/1746215108?i=1746215110'
                 }
               ]}
             />
