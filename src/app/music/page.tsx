@@ -1,5 +1,6 @@
 import PageHeader from '@/components/shared/PageHeader';
 import MusicPlayer from '@/components/music/MusicPlayer';
+import YouTubeEmbed from '@/components/music/YouTubeEmbed';
 import { getAssetPath } from '@/utils/assetPath';
 
 export const metadata = {
@@ -51,6 +52,19 @@ export default function MusicPage() {
                   url: 'https://music.apple.com/us/album/moolah/1746215108?i=1746215110'
                 }
               ]}
+            />
+          </div>
+        </div>
+      </section>
+      
+      <section className="section-padding pt-0">
+        <div className="container-width">
+          <h2 className="text-3xl md:text-4xl font-bold text-gold mb-8 text-center">Featured Video</h2>
+          <div className="max-w-4xl mx-auto">
+            <YouTubeEmbed 
+              videoId="T0GM7TKDXEU" 
+              title="Lashon - Official Performance"
+              description="Watch Lashon's latest performance showcasing her unique style and sound."
             />
           </div>
         </div>
