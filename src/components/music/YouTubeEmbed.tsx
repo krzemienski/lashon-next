@@ -20,9 +20,9 @@ export default function YouTubeEmbed({
     
   return (
     <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg overflow-hidden shadow-xl mb-8">
-      <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+      <div className="relative pb-[56.25%] h-0 overflow-hidden">
         <iframe 
-          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+          className="absolute top-0 left-0 w-full h-full border-0"
           src={`https://www.youtube.com/embed/${extractedVideoId}`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
