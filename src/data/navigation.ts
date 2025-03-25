@@ -4,6 +4,7 @@ export const navigation = [
   { name: 'Music', href: '/music' },
   { name: 'Gallery', href: '/gallery' },
   { name: 'Contact', href: '/contact' },
+  { name: 'Shop', href: 'https://lashonsstore.myshopify.com/', external: true },
 ];
 
 export const socialLinks = [

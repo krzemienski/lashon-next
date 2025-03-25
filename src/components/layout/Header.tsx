@@ -21,13 +21,25 @@ export default function Header() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-gray-300 hover:text-white transition-colors duration-200"
-            >
-              {item.name}
-            </Link>
+            item.external ? (
+              <a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+              >
+                {item.name}
+              </a>
+            ) : (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+              >
+                {item.name}
+              </Link>
+            )
           ))}
         </div>
 
@@ -57,14 +69,27 @@ export default function Header() {
           >
             <div className="bg-black/95 backdrop-blur-md px-4 py-6">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block py-3 text-gray-300 hover:text-white transition-colors duration-200"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.external ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block py-3 text-gray-300 hover:text-white transition-colors duration-200"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="block py-3 text-gray-300 hover:text-white transition-colors duration-200"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
           </motion.div>
