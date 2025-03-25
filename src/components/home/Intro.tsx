@@ -89,12 +89,22 @@ export default function Intro() {
           }
         </p>
 
-        <a
-          href="#latest-release"
-          className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 inline-block"
-        >
-          Explore My Music
-        </a>
+        <div className="flex flex-wrap justify-center gap-4">
+          <a
+            href="/music"
+            className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 inline-block"
+          >
+            Explore My Music
+          </a>
+          <a
+            href="https://lashonsstore.myshopify.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 inline-block bg-gold text-black hover:bg-burnt-orange hover:text-white transition-colors duration-200"
+          >
+            Shop
+          </a>
+        </div>
       </motion.div>
     </section>
   );

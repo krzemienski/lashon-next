@@ -81,12 +81,21 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-wrap gap-4"
           >
             <a
-              href="#latest-release"
+              href="/music"
               className="inline-block bg-emerald-500 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-emerald-600 transition-colors duration-200"
             >
               Explore My Music
+            </a>
+            <a
+              href="https://lashonsstore.myshopify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gold text-black px-8 py-3 rounded-md text-lg font-medium hover:bg-burnt-orange hover:text-white transition-colors duration-200"
+            >
+              Shop
             </a>
           </motion.div>
         </motion.div>

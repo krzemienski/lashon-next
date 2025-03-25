@@ -72,6 +72,15 @@ export default function MainLayout({ children }: MainLayoutProps) {
               >
                 Music
               </Link>
+              <a 
+                href="https://lashonsstore.myshopify.com/" 
+                className="text-white hover:text-gold transition-colors"
+                onClick={() => handleNavLinkClick('shop')}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Shop
+              </a>
               <Link 
                 href="/gallery" 
                 className="text-white hover:text-gold transition-colors"
@@ -144,6 +153,15 @@ export default function MainLayout({ children }: MainLayoutProps) {
                 >
                   Music
                 </Link>
+                <a
+                  href="https://lashonsstore.myshopify.com/"
+                  className="text-white hover:text-gold transition-colors"
+                  onClick={() => handleNavLinkClick('shop_mobile')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop
+                </a>
                 <Link
                   href="/gallery"
                   className="text-white hover:text-gold transition-colors"

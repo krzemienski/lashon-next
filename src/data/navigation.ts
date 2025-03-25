@@ -1,10 +1,17 @@
-export const navigation = [
+// Define type for navigation items
+export type NavigationItem = {
+  name: string;
+  href: string;
+  external?: boolean;
+};
+
+export const navigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Music', href: '/music' },
+  { name: 'Shop', href: 'https://lashonsstore.myshopify.com/', external: true },
   { name: 'Gallery', href: '/gallery' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Shop', href: 'https://lashonsstore.myshopify.com/', external: true },
 ];
 
 export const socialLinks = [
